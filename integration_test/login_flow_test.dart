@@ -9,6 +9,29 @@ void main() {
     'Login Flow Testing',
     () {
       IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+      testWidgets(
+          "Should show Required filed error when user taps on login button without entering  email or password",
+          (WidgetTester tester) async {
+        //Arrange
+        await tester.pumpWidget(
+          MaterialApp(
+            home: const LoginScreen(),
+            routes: {
+              HomeScreen.routeName: (context) => const HomeScreen(),
+              LoginScreen.routeName: (context) => const LoginScreen(),
+            },
+          ),
+        );
+        //Act
+
+        Finder loginButtonFinder = find.byType(ElevatedButton);
+        await tester.tap(loginButtonFinder);
+        await tester.pumpAndSettle(const Duration(seconds: 2));
+
+        Finder errorText = find.text("Required field");
+        //Assert
+        expect(errorText, findsNWidgets(2));
+      });
       //test for valid flows so:
       testWidgets(
           "Should show home screen when user taps on login button after entering valid email & password",
@@ -38,7 +61,7 @@ void main() {
 
         Finder loginButtonFinder = find.byType(ElevatedButton);
         await tester.tap(loginButtonFinder);
-        await tester.pumpAndSettle();
+        await tester.pumpAndSettle(const Duration(seconds: 2));
 
         Finder welcomeText = find.byType(Text);
         //Assert
