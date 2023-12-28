@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:test_learning/math_utils.dart';
+import 'package:test_learning/view-model/math_utils.dart';
 
 void main() {
   group(

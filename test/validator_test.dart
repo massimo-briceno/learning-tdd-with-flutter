@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:test_learning/validator.dart';
+import 'package:test_learning/view-model/validator.dart';
 
 void main() {
   group('Validating mail - ', () {

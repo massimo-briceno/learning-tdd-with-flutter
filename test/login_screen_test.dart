@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:test_learning/home_sreen.dart';
-import 'package:test_learning/login_screen.dart';
+import 'package:test_learning/view/home_screen.dart';
+import 'package:test_learning/view/login_screen.dart';
 
 void main() {
   //Arrange

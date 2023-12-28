@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_learning/home_sreen.dart';
-import 'package:test_learning/validator.dart';
+import 'package:test_learning/view-model/login_view_model.dart';
+import 'package:test_learning/view/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,8 +13,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -31,24 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
           key: _key,
           child: Column(
             children: [
-              TextFormField(
-                controller: _emailController,
-                key: const Key('email'),
-                validator: (value) => Validator.validateMail(value ?? ""),
-                decoration: const InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email',
-                ),
-              ),
-              TextFormField(
-                controller: _passwordController,
-                key: const Key('password'),
-                validator: (value) => Validator.validatePassword(value ?? ""),
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  hintText: 'Enter your password',
-                ),
-              ),
+              InputFields(),
               const SizedBox(
                 height: 20,
               ),

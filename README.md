@@ -2,6 +2,10 @@
 
 Learning personal project to implement TDD in Flutter using flutter_test and integration_test. No GitFlow used in this project.
 
+# Architecture
+
+A simple mobile app with the top-level architecture following a client-server model. Meanwhile, the client subsystem has been modeled using an MVVM pattern.
+
 ## Getting Started
 
 1. clone repo
